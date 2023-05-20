@@ -11,10 +11,10 @@ jobs:  # ワークフローで実行するジョブを定義します。
 
     steps:  # ジョブで実行するステップを定義します。
       - name: Checkout  # ステップの名前を設定します。このステップではリポジトリのコードをチェックアウトします。
-        uses: actions/checkout@v2.3.1  # GitHubが提供する公式アクションを使用します。これにより、ワークフローがリポジトリのコードにアクセスできます。
+        uses: actions/checkout@v3  # GitHubが提供する公式アクションを使用します。これにより、ワークフローがリポジトリのコードにアクセスできます。
 
       - name: Use Node.js  # ステップの名前を設定します。このステップではNode.jsをセットアップします。
-        uses: actions/setup-node@v2.1.5  # Node.jsをセットアップするための公式アクションを使用します。
+        uses: actions/setup-node@v3  # Node.jsをセットアップするための公式アクションを使用します。
         with:  # アクションの追加設定を定義します。
           node-version: '16.12.0'  # 使用するNode.jsのバージョンを指定します。
 
@@ -24,7 +24,7 @@ jobs:  # ワークフローで実行するジョブを定義します。
           npm run build  # Astroプロジェクトをビルドします。
 
       - name: Deploy  # ステップの名前を設定します。このステップではビルドしたサイトをデプロイします。
-        uses: peaceiris/actions-gh-pages@v3.8.0  # GitHub Pagesにデプロイするための公式でないが広く利用されてい
+        uses: peaceiris/actions-gh-pages@v3  # GitHub Pagesにデプロイするための公式でないが広く利用されてい
         # います。
         with:  # アクションの追加設定を定義します。
           github_token: ${{ secrets.MYPROJECT }}  # GitHubから提供される秘密のトークンを使用します。これにより、ワークフローがあなたのGitHubアカウントを代理で行動できます。このトークンはGitHubによって自動的に設定されます。そのため、ユーザーが自分で設定する必要はありません。
