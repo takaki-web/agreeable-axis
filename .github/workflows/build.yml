@@ -14,9 +14,9 @@ jobs:  # ワークフローで実行するジョブを定義します。
         uses: actions/checkout@v2.3.1  # GitHubが提供する公式アクションを使用します。これにより、ワークフローがリポジトリのコードにアクセスできます。
 
       - name: Use Node.js  # ステップの名前を設定します。このステップではNode.jsをセットアップします。
-        uses: actions/setup-node@v2.1.4  # Node.jsをセットアップするための公式アクションを使用します。
+        uses: actions/setup-node@v2.1.5  # Node.jsをセットアップするための公式アクションを使用します。
         with:  # アクションの追加設定を定義します。
-          node-version: '14.x'  # 使用するNode.jsのバージョンを指定します。
+          node-version: '16.12.0'  # 使用するNode.jsのバージョンを指定します。
 
       - name: Install and Build  # ステップの名前を設定します。このステップでは依存関係のインストールとビルドを行います。
         run: |  # ステップで実行するコマンドを定義します。
